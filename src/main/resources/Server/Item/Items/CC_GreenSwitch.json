@@ -1,0 +1,43 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.CC_GreenSwitch.name"
+  },
+  "MaxStack": 100,
+  "Model": "Blocks/CC_GreenSwitch.blockymodel",
+  "Texture": "BlockTextures/CC_GreenSwitchOff.png",
+  "Quality": "Rare",
+  "SoundEventId": "SFX_Crystal_Build",
+  "Set": "CrystalCircuitry",
+  "Categories": [
+    "CC_Category.CC_Blocks"
+  ],
+  "Scale": 1,
+  "BlockType": {
+    "Group": "CC_Blocks",
+    "DrawType": "Model",
+    "Textures": [
+      {
+        "All": "BlockTextures/CC_GreenSwitchOff.png",
+        "Weight": 1
+      },
+      {
+        "All": "BlockTextures/CC_GreenSwitchOn.png"
+      }
+    ],
+    "CustomModel": "Blocks/CC_GreenSwitch.blockymodel",
+    "Opacity": "Cutout",
+    "Material": "Solid",
+    "CustomModelScale": 1,
+    "HitboxType": "Block_Half",
+    "InteractionHitboxType": "Block_Half",
+    "BlockSoundSetId": "Crystal",
+    "AmbientSoundEventId": "SFX_Crystal_Build",
+    "InteractionSoundEventId": "SFX_Crystal_Hit",
+    "PlacementSettings": {
+      "AllowRotationKey": true,
+      "RotationMode": "StairFacingPlayer",
+      "BlockPreviewVisibility": "AlwaysVisible"
+    }
+  },
+  "Icon": "Icons/ItemsGenerated/CC_GreenSwitch.png"
+}
