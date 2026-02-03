@@ -1,7 +1,7 @@
 # Crystal Circuitry — Implementation Order & Architecture Checklist (MVP)
 
 Namespace: `raven`  
-ID Prefix: `cc_`  
+ID Prefix: `CC_`  
 Project: Crystal Circuitry  
 Applies To: MVP only
 
@@ -44,13 +44,13 @@ Do not mix responsibilities across layers.
 
 Create asset IDs (MVP):
 
-- `cc_green_switch`
-- `cc_yellow_emitter`
-- `cc_yellow_receiver`
-- `cc_white_emitter`
-- `cc_white_receiver`
-- `cc_lamp`
-- `cc_door_anchor`
+- `CC_GreenSwitch`
+- `CC_YellowEmitter`
+- `CC_YellowReceiver`
+- `CC_WhiteEmitter`
+- `CC_WhiteReceiver`
+- `CC_Lamp`
+- `CC_DoorAnchor`
 
 Confirm your pack namespace remains consistent with plugin identity (`raven`).
 
@@ -60,13 +60,13 @@ Confirm your pack namespace remains consistent with plugin identity (`raven`).
 
 Create minimal textures for each block, even if they are simple placeholders:
 
-- `cc_green_switch_off`, `cc_green_switch_on`
-- `cc_yellow_emitter_unlinked`, `cc_yellow_emitter_linked`, `cc_yellow_emitter_active`
-- `cc_yellow_receiver_unlinked`, `cc_yellow_receiver_linked`, `cc_yellow_receiver_active`
-- `cc_white_emitter_inactive`, `cc_white_emitter_active`
-- `cc_white_receiver_inactive`, `cc_white_receiver_active`
-- `cc_lamp_off`, `cc_lamp_on`
-- `cc_door_anchor_off`, `cc_door_anchor_on`
+- `CC_GreenSwitchOff`, `CC_GreenSwitchOn`
+- `CC_YellowEmitterUnlinked`, `CC_YellowEmitterLinked`, `CC_YellowEmitterActive`
+- `CC_YellowReceiverUnlinked`, `CC_YellowReceiverLinked`, `CC_YellowReceiverActive`
+- `CC_WhiteEmitterInactive`, `CC_WhiteEmitterActive`
+- `CC_WhiteReceiverInactive`, `CC_WhiteReceiverActive`
+- `CC_LampOff`, `CC_LampOn`
+- `CC_DoorAnchorOff`, `CC_DoorAnchorOn`
 
 Models:
 - MVP default: simple cube models for all blocks unless a special shape is needed.
@@ -87,13 +87,13 @@ Create block definitions for each MVP block:
 
 Define block state toggles required by `block-spec.md`:
 
-- `cc_green_switch`: `off/on`
-- `cc_yellow_emitter`: `unlinked/linked_inactive/linked_active`
-- `cc_yellow_receiver`: `unlinked/linked_inactive/linked_active`
-- `cc_white_emitter`: `inactive/active`
-- `cc_white_receiver`: `inactive/active`
-- `cc_lamp`: `off/on`
-- `cc_door_anchor`: `off/on`
+- `CC_GreenSwitch`: `off/on`
+- `CC_YellowEmitter`: `unlinked/linked_Inactive/linked_Active`
+- `CC_YellowReceiver`: `unlinked/linked_Inactive/linked_Active`
+- `CC_WhiteEmitter`: `Inactive/active`
+- `CC_WhiteReceiver`: `Inactive/active`
+- `CC_Lamp`: `off/on`
+- `CC_DoorAnchor`: `off/on`
 
 Asset-layer expectation:
 - The block state can visually change (texture/model swap) when state changes.
@@ -147,7 +147,7 @@ Implement the frequency system:
 - `Frequency` object containing:
     - frequency ID
     - channel type
-    - active/inactive state
+    - Active/Inactive state
     - owning emitter identifier
 
 Rules enforced here:
@@ -246,8 +246,8 @@ Implement the bridge between logic and visuals:
 - When logic state changes, update the corresponding block state so visuals change.
 
 Examples:
-- Switch toggled → set `cc_green_switch` state `off/on`
-- Lamp receives signal → set `cc_lamp` state `off/on`
+- Switch toggled → set `CC_GreenSwitch` state `off/on`
+- Lamp receives signal → set `CCLamp` state `off/on`
 - Receiver linked/unlinked → update `linked_*` states
 
 Rule:
