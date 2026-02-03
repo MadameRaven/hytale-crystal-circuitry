@@ -1,7 +1,7 @@
 # Crystal Circuitry — Block Specification (MVP)
 
 Namespace: `raven`  
-ID Prefix: `cc_`  
+ID Prefix: `CC_`  
 Project: Crystal Circuitry
 
 This document defines the **minimum viable block set (MVP)** for Crystal Circuitry.
@@ -11,7 +11,7 @@ All blocks listed here are required for the first functional release.
 
 ## Design Rules (Applies to All Blocks)
 
-- All blocks & items use the `cc_` ID prefix.
+- All blocks & items use the `CC_` ID prefix.
 - All state changes must be event-driven (no ticking).
 - Visual feedback must be subtle and readable.
 - Blocks should be understandable without external documentation.
@@ -22,7 +22,7 @@ All blocks listed here are required for the first functional release.
 ## 1. Input Blocks
 
 ### 1.1 Green Crystal Switch
-**ID:** `cc_green_switch`
+**ID:** `CC_GreenSwitch`
 
 **Role:**  
 Primary player input. Acts as a binary toggle (on/off).
@@ -37,8 +37,8 @@ Primary player input. Acts as a binary toggle (on/off).
 - Does nothing while idle.
 
 **Textures Required:**
-- `cc_green_switch_off`
-- `cc_green_switch_on` (subtle glow)
+- `CC_GreenSwitchOff`
+- `CC_GreenSwitchOn` (subtle glow)
 
 **Notes:**
 - No pulse/timer behavior in MVP.
@@ -49,61 +49,61 @@ Primary player input. Acts as a binary toggle (on/off).
 ## 2. Signal Transfer Blocks (Targeted)
 
 ### 2.1 Yellow Crystal Emitter
-**ID:** `cc_yellow_emitter`
+**ID:** `CC_YellowEmitter`
 
 **Role:**  
 Sends a signal to exactly one paired Yellow Receiver.
 
 **States:**
-- `unlinked`
-- `linked_inactive`
-- `linked_active`
+- `Unlinked`
+- `LinkedInactive`
+- `LinkedActive`
 
 **Behavior:**
-- Can be paired to one `cc_yellow_receiver`.
+- Can be paired to one `CC_YellowReceiver`.
 - When receiving a signal, forwards it to its paired receiver.
 - Does not scan for receivers; pairing is explicit.
 
 **Textures Required:**
-- `cc_yellow_emitter_unlinked`
-- `cc_yellow_emitter_linked`
-- `cc_yellow_emitter_active`
+- `CC_YellowEmitterUnlinked`
+- `CC_YellowEmitterLinked`
+- `CC_YellowEmitterActive`
 
 ---
 
 ### 2.2 Yellow Crystal Receiver
-**ID:** `cc_yellow_receiver`
+**ID:** `CC_YellowReceiver`
 
 **Role:**  
 Receives a signal from exactly one paired Yellow Emitter.
 
 **States:**
-- `unlinked`
-- `linked_inactive`
-- `linked_active`
+- `Unlinked`
+- `LinkedInactive`
+- `LinkedActive`
 
 **Behavior:**
 - Reacts only to its paired emitter.
 - Forwards signal state to any attached actuator.
 
 **Textures Required:**
-- `cc_yellow_receiver_unlinked`
-- `cc_yellow_receiver_linked`
-- `cc_yellow_receiver_active`
+- `CC_YellowReceiverUnlinked`
+- `CC_YellowReceiverLinked`
+- `CC_YellowReceiverActive`
 
 ---
 
 ## 3. Signal Transfer Blocks (Broadcast / Aura)
 
 ### 3.1 White Crystal Emitter
-**ID:** `cc_white_emitter`
+**ID:** `CC_WhiteEmitter`
 
 **Role:**  
 Broadcasts a signal to all White Receivers within range.
 
 **States:**
-- `inactive`
-- `active`
+- `Inactive`
+- `Active`
 
 **Behavior:**
 - Emits signal events to registered receivers within radius.
@@ -111,8 +111,8 @@ Broadcasts a signal to all White Receivers within range.
 - Broadcast occurs only on state change.
 
 **Textures Required:**
-- `cc_white_emitter_inactive`
-- `cc_white_emitter_active`
+- `CC_WhiteEmitterInactive`
+- `CC_WhiteEmitterActive`
 
 **Notes:**
 - No per-tick radius scanning.
@@ -121,29 +121,29 @@ Broadcasts a signal to all White Receivers within range.
 ---
 
 ### 3.2 White Crystal Receiver
-**ID:** `cc_white_receiver`
+**ID:** `CC_WhiteReceiver`
 
 **Role:**  
 Receives broadcast signals from nearby White Emitters.
 
 **States:**
-- `inactive`
-- `active`
+- `Inactive`
+- `Active`
 
 **Behavior:**
 - Activates when any bound emitter broadcasts `on`.
 - Deactivates when all bound emitters are inactive.
 
 **Textures Required:**
-- `cc_white_receiver_inactive`
-- `cc_white_receiver_active`
+- `CC_WhiteReceiverInactive`
+- `CC_WhiteReceiverActive`
 
 ---
 
 ## 4. Actuator Blocks
 
 ### 4.1 Crystal Lamp
-**ID:** `cc_lamp`
+**ID:** `CC_Lamp`
 
 **Role:**  
 Simple visual actuator (light on/off).
@@ -158,13 +158,13 @@ Simple visual actuator (light on/off).
 - No light flicker or animation in MVP.
 
 **Textures Required:**
-- `cc_lamp_off`
-- `cc_lamp_on` (emissive)
+- `CC_LampOff`
+- `CC_LampOn` (emissive)
 
 ---
 
 ### 4.2 Door Anchor Block
-**ID:** `cc_door_anchor`
+**ID:** `CC_DoorAnchor`
 
 **Role:**  
 Relays a Crystal signal to one or two nearby door blocks, enabling synchronized opening and closing [ ≤ 5 blocks by default ].
@@ -180,8 +180,8 @@ Relays a Crystal signal to one or two nearby door blocks, enabling synchronized 
 - Allows up to 2 doors to be linked to a single anchor.
 
 **Textures Required:**
-- `cc_door_anchor_off`
-- `cc_door_anchor_on` (emissive)
+- `CC_DoorAnchorOff`
+- `CC_DoorAnchorOn` (emissive)
 
 **Notes:**
 - MVP implementation may swap block state rather than animate movement.

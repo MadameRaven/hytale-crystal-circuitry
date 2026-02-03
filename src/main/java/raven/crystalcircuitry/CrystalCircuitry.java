@@ -2,16 +2,13 @@ package raven.crystalcircuitry;
 
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
-
+import raven.crystalcircuitry.command.CC_Command;
 import javax.annotation.Nonnull;
 import java.util.logging.Level;
 
 /**
  * Main plugin class.
- *
- * TODO: Implement your plugin logic here.
- *
- * @author YourName
+ * @author MadameRaven
  * @version 1.0.0
  */
 public class CrystalCircuitry extends JavaPlugin {
@@ -24,7 +21,7 @@ public class CrystalCircuitry extends JavaPlugin {
     public CrystalCircuitry(@Nonnull JavaPluginInit init) {
         super(init);
         instance = this;
-        getLogger().at(Level.INFO).log("[TemplatePlugin] Plugin loaded!");
+        getLogger().at(Level.INFO).log("[CrystalCircuitry] Plugin loaded!");
     }
 
     /**
@@ -39,7 +36,7 @@ public class CrystalCircuitry extends JavaPlugin {
      */
     @Override
     protected void setup() {
-        getLogger().at(Level.INFO).log("[TemplatePlugin] Plugin setup!");
+        getLogger().at(Level.INFO).log("[CrystalCircuitry] Plugin setup!");
 
         // TODO: Initialize your plugin here
         // - Load configuration
@@ -55,7 +52,7 @@ public class CrystalCircuitry extends JavaPlugin {
      */
     @Override
     protected void start() {
-        getLogger().at(Level.INFO).log("[TemplatePlugin] Plugin enabled!");
+        getLogger().at(Level.INFO).log("[CrystalCircuitry] Plugin enabled!");
     }
 
     /**
@@ -63,7 +60,7 @@ public class CrystalCircuitry extends JavaPlugin {
      */
     @Override
     public void shutdown() {
-        getLogger().at(Level.INFO).log("[TemplatePlugin] Plugin disabled!");
+        getLogger().at(Level.INFO).log("[CrystalCircuitry] Plugin disabled!");
 
         // TODO: Cleanup your plugin here
         // - Save data
@@ -82,7 +79,13 @@ public class CrystalCircuitry extends JavaPlugin {
      * Register your commands here.
      */
     private void registerCommands() {
+        getLogger().at(Level.INFO).log("[CrystalCircuitry] Registering commands...");
 
+        this.getCommandRegistry().registerCommand(
+                new CC_Command(this.getName(), this.getManifest().getVersion().toString())
+        );
+
+        getLogger().at(Level.INFO).log("[CrystalCircuitry] Registered /cc command.");
     }
 
 }

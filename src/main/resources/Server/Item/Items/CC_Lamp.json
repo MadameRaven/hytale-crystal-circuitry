@@ -1,0 +1,33 @@
+{
+  "TranslationProperties": {
+    "Name": "server.CC_Lamp.name"
+  },
+  "MaxStack": 100,
+  "Icon": "Icons/ItemsGenerated/CC_Lamp.png",
+  "Categories": [
+    "CC_Category.CC_Blocks"
+  ],
+  "PlayerAnimationsId": "Block",
+  "Set": "CrystalCircuitry",
+
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Cube",
+    "Group": "CC_Blocks",
+    "Flags": {},
+
+    "Textures": [
+      {
+        "All": "BlockTextures/CC_LampOff.png"
+      }
+    ],
+
+    "BlockSoundSetId": "Stone",
+    "BlockBreakingDecalId": "Breaking_Decals_Rock"
+  },
+  "ResourceTypes": [
+    {
+      "Id": "CrystalCircuitry"
+    }
+  ]
+}

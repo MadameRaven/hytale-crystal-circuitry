@@ -1,4 +1,4 @@
-package org.plugin;
+package raven.crystalcircuitry.command;
 
 import com.hypixel.hytale.protocol.GameMode;
 import com.hypixel.hytale.server.core.Message;
@@ -8,15 +8,15 @@ import com.hypixel.hytale.server.core.command.system.basecommands.CommandBase;
 import javax.annotation.Nonnull;
 
 /**
- * This is an example command that will simply print the name of the plugin in chat when used.
+ * This is an example command that will simply confirm CC is loaded in game.
  */
-public class ExampleCommand extends CommandBase {
+public class CC_Command extends CommandBase {
 
     private final String pluginName;
     private final String pluginVersion;
 
-    public ExampleCommand(String pluginName, String pluginVersion) {
-        super("test", "Prints a test message from the " + pluginName + " plugin.");
+    public CC_Command(String pluginName, String pluginVersion) {
+        super("cc", "CrystalCircuitry: verify the mod is loaded (/cc).");
         this.setPermissionGroup(GameMode.Adventure); // Allows the command to be used by anyone, not just OP
         this.pluginName = pluginName;
         this.pluginVersion = pluginVersion;
@@ -24,6 +24,8 @@ public class ExampleCommand extends CommandBase {
 
     @Override
     protected void executeSync(@Nonnull CommandContext ctx) {
-        ctx.sendMessage(Message.raw("Hello from the " + pluginName + " v" + pluginVersion + " plugin!"));
+        final String msg = "[CrystalCircuitry] ACTIVE — " + pluginName + " v" + pluginVersion + " (namespace: raven)";
+        ctx.sendMessage(Message.raw(msg));
+        System.out.println(msg);
     }
 }

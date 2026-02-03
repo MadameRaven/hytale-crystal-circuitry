@@ -11,7 +11,8 @@ A mod that aims to add functionality and creative in-game interactions to Hytale
 ---
 
 ## Project Structure
-# Pulled from Template information - Kept for Development steps/fallback & Credits - All Template Credit to GitHub user realBritakee for the amazing template design.
+# Pulled from Template information - Kept (& Updated) for Development steps; also as fallback & Credits 
+# All Template Credit to GitHub user realBritakee for the amazing template design.
 ```
 CrystalCircuitry/
 ├── .github/workflows/
