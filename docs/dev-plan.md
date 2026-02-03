@@ -1,7 +1,7 @@
 # Crystal Circuitry — Development Plan
 
 Plugin Namespace: `raven`  
-Asset/ID Prefix: `cc_`  
+Asset/ID Prefix: `CC_`  
 Project Name: Crystal Circuitry
 
 ## Guiding Constraints
@@ -42,7 +42,7 @@ Project Name: Crystal Circuitry
 
 ### Checklist
 - [ ] Decide MVP block set
-- [ ] Define IDs for each block/item using `cc_` prefix
+- [ ] Define IDs for each block/item using `CC_` prefix
 - [ ] Define block states per block (on/off, linked/unlinked, etc.)
 - [ ] Define texture list per block (by state)
 - [ ] Define interaction rules (inputs → signals → actuators)
@@ -80,7 +80,7 @@ Project Name: Crystal Circuitry
 - [ ] Green switch toggles emit signal events
 - [ ] Yellow linking: 1-to-1 emitter/receiver pairing
 - [ ] White aura: broadcast within radius via receiver registration (no scanning)
-- [ ] Actuators: lamp + hidden door respond to signals
+- [ ] Actuators: lamp + door anchor respond to signals
 - [ ] Save/load: links persist across server restart
 - [ ] Performance guardrails: no global ticking loops
 
@@ -107,11 +107,11 @@ Project Name: Crystal Circuitry
 
 ## MVP Scope (initial target)
 In scope:
-- cc_green_switch (toggle input)
-- cc_yellow_emitter / cc_yellow_receiver (1-to-1 link)
-- cc_white_emitter / cc_white_receiver (broadcast aura)
-- cc_lamp (on/off)
-- cc_hidden_door (open/close or solid/passable)
+- CC_GreenSwitch (toggle input)
+- CC_YellowEmitter / CC_YellowReceiver (1-to-1 link)
+- CC_WhiteEmitter / CC_WhiteReceiver (broadcast aura)
+- CC_Lamp (on/off)
+- CC_DoorAnchor (door control with switches)
 
 Out of scope (MVP):
 - Item automation, inventory movers, belts, hoppers

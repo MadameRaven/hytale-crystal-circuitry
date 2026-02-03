@@ -1,7 +1,7 @@
 # Crystal Circuitry — Test Plan (MVP)
 
 Namespace: `raven`  
-ID Prefix: `cc_`  
+ID Prefix: `CC_`  
 Project: Crystal Circuitry  
 Applies To: MVP only
 
@@ -167,10 +167,10 @@ Manual tests validate engine integration and player experience.
 ### 2.3 Yellow Crystal Circuit
 
 **Blocks:**
-- `cc_green_switch`
-- `cc_yellow_emitter`
-- `cc_yellow_receiver`
-- `cc_lamp`
+- `CC_GreenSwitch`
+- `CC_YellowEmitter`
+- `CC_YellowReceiver`
+- `CC_Lamp`
 
 **Steps:**
 1. Pair Yellow Emitter to Yellow Receiver
@@ -187,9 +187,9 @@ Manual tests validate engine integration and player experience.
 ### 2.4 White Crystal Broadcast
 
 **Blocks:**
-- `cc_white_emitter`
-- Two or more `cc_white_receiver`
-- `cc_lamp`
+- `CC_WhiteEmitter`
+- Two or more `CC_WhiteReceiver`
+- `CC_Lamp`
 
 **Steps:**
 1. Place a White Crystal Emitter
@@ -206,7 +206,7 @@ Manual tests validate engine integration and player experience.
 ### 2.5 Door Anchor
 
 **Blocks:**
-- `cc_door_anchor`
+- `CC_DoorAnchor`
 - One or two standard doors
 
 **Steps:**

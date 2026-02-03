@@ -1,7 +1,7 @@
 # Crystal Circuitry — Linking & UX Rules (MVP)
 
 Namespace: `raven`  
-ID Prefix: `cc_`  
+ID Prefix: `CC_`  
 Project: Crystal Circuitry  
 Applies To: MVP only
 
@@ -76,7 +76,7 @@ This is required to avoid stale connections and reduce unnecessary memory usage.
 Yellow receiver discovery radius:
 - **100 blocks** (spherical or block-distance radius; implementation-defined but consistent)
 
-### 3.2 Yellow Emitter UI (`cc_yellow_emitter`)
+### 3.2 Yellow Emitter UI (`CC_YellowEmitter`)
 UI displays:
 - Current frequency (or `None` if unassigned)
 - Button: **Generate Frequency** (only shown if no frequency exists)
@@ -86,7 +86,7 @@ Rules:
 - Emitter is the only block that can create/reset a Yellow frequency.
 - Reset deletes old frequency and generates a new one immediately.
 
-### 3.3 Yellow Receiver UI (`cc_yellow_receiver`)
+### 3.3 Yellow Receiver UI (`CC_YellowReceiver`)
 UI displays:
 - List of available Yellow frequencies within 100 blocks
 - Selection action: **Tune/Link to Frequency**
@@ -106,7 +106,7 @@ Rules:
 White receiver discovery radius:
 - **25 blocks**
 
-### 4.2 White Emitter UI (`cc_white_emitter`)
+### 4.2 White Emitter UI (`CC_WhiteEmitter`)
 UI displays:
 - Current frequency (or `None` if unassigned)
 - Button: **Generate Frequency** (only shown if no frequency exists)
@@ -117,7 +117,7 @@ Rules:
 - Emitter is the only block that can create/reset a White frequency.
 - Reset deletes old frequency and generates a new one immediately.
 
-### 4.3 White Receiver UI (`cc_white_receiver`)
+### 4.3 White Receiver UI (`CC_WhiteReceiver`)
 UI displays:
 - List of available White frequencies within 25 blocks
 - Selection action: **Tune/Link to Frequency**
@@ -132,7 +132,7 @@ Rules:
 
 ## 5. Door Anchor Linking
 
-### 5.1 Door Anchor UI (`cc_door_anchor`)
+### 5.1 Door Anchor UI (`CC_DoorAnchor`)
 UI displays:
 - List of door blocks within range (≤ 5 blocks by default)
 - Selection controls to link up to **two** doors
