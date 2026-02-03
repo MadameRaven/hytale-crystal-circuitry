@@ -1,0 +1,18 @@
+{
+  "Id": "CC_Category",
+  "Name": "ui.itemcategory.CC_Category",
+  "Icon": "Icons/ItemCategories/CC_Category.png",
+  "Order": 6,
+  "Children": [
+    {
+      "Id": "CC_Blocks",
+      "Name": "ui.itemcategory.CC_Blocks_Cat",
+      "Icon": "Icons/ItemCategories/CC_Blocks_Cat.png"
+    },
+    {
+      "Id": "CC_Items",
+      "Name": "ui.itemcategory.CC_Items_Cat",
+      "Icon": "Icons/ItemCategories/CC_Items_Cat.png"
+    }
+  ]
+}
