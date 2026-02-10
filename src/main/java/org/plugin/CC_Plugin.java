@@ -1,9 +1,11 @@
 package org.plugin;
 
 import com.hypixel.hytale.logger.HytaleLogger;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import raven.crystalcircuitry.command.CC_Command;
+import raven.crystalcircuitry.power.CC_GC_PW_ON;
 
 import javax.annotation.Nonnull;
 
@@ -24,5 +26,7 @@ public class CC_Plugin extends JavaPlugin {
     protected void setup() {
         LOGGER.atInfo().log("Setting up plugin " + this.getName());
         this.getCommandRegistry().registerCommand(new CC_Command(this.getName(), this.getManifest().getVersion().toString()));
+        this.getCodecRegistry(Interaction.CODEC)
+                .register("cc:cc_gc_pw_on", CC_GC_PW_ON.class, CC_GC_PW_ON.CODEC);
     }
 }
