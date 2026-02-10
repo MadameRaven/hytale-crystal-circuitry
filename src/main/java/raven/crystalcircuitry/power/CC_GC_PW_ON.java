@@ -21,7 +21,8 @@ public class CC_GC_PW_ON extends SimpleInstantInteraction {
     private static final Logger LOG = Logger.getLogger("CrystalCircuitry");
 
     public static final BuilderCodec<CC_GC_PW_ON> CODEC = BuilderCodec.builder(
-            CC_GC_PW_ON.class, CC_GC_PW_ON::new, SimpleInstantInteraction.CODEC).build();
+            CC_GC_PW_ON.class, CC_GC_PW_ON::new, SimpleInstantInteraction.CODEC)
+    .build();
 
     @Override
     protected void firstRun(@Nonnull InteractionType interactionType, @Nonnull InteractionContext interactionContext, @Nonnull CooldownHandler cooldownHandler) {
@@ -76,5 +77,7 @@ public class CC_GC_PW_ON extends SimpleInstantInteraction {
         // ✅ immediate readback test
         boolean readBack = CC_PowerRegistry.get(world, pos);
         LOG.log(Level.INFO, "[CC] Registry readback powered={0}", readBack);
+
+        interactionContext.getInteractionVars();
     }
 }

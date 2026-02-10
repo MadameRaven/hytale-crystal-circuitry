@@ -36,7 +36,8 @@
               "default": "Turned_On",
               "Turned_On": "Turned_Off",
               "Turned_Off": "Turned_On"
-            }
+            },
+            "Next": "CC_GC_PW_ON"
           }
         ]
       }

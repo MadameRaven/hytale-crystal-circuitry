@@ -1,8 +1,11 @@
 package raven.crystalcircuitry;
 
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import raven.crystalcircuitry.command.CC_Command;
+import raven.crystalcircuitry.power.CC_GC_PW_ON;
+
 import javax.annotation.Nonnull;
 import java.util.logging.Level;
 
@@ -37,6 +40,8 @@ public class CrystalCircuitry extends JavaPlugin {
     @Override
     protected void setup() {
         getLogger().at(Level.INFO).log("[CrystalCircuitry] Plugin setup!");
+        this.getCodecRegistry(Interaction.CODEC).register("CC_GC_PW_ON", CC_GC_PW_ON.class, CC_GC_PW_ON.CODEC);
+        getLogger().at(Level.INFO).log("Registered interaction codec: cc:CC_GC_PW_ON");
 
         // TODO: Initialize your plugin here
         // - Load configuration
