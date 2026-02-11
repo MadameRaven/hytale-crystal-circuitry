@@ -2,8 +2,8 @@
 name: Bug report
 about: Create a report to help us improve
 title: "[BUG] Thing doesn't work!"
-labels: bug
-assignees: MadameRaven
+labels: bug, enhancement
+assignees: AsterTheCreator, MadameRaven
 
 ---
 
