@@ -44,6 +44,34 @@ Primary player input. Acts as a binary toggle (on/off).
 - No pulse/timer behavior in MVP.
 - This is the only direct player-operated logic block in MVP.
 
+### 1.2 Green Crystal Channels
+**ID:** `CC_GC_Channel_[type]`
+
+**Role:**
+Allows player to transfer Crystal Power over shorter distances, but only within the shape of the channel provided. 
+
+**States:**
+- `off`
+- `on`
+
+**Behavior:**
+- Player interaction toggles state.
+- Emits a signal event when state changes.
+- Does nothing while idle.
+
+**Textures Required:**
+- `CC_GC_Channel_Straight`
+- `CC_GC_Channel_StraightOn`
+- `CC_GC_Channel_L`
+- `CC_GC_Channel_LOn`
+- `CC_GC_Channel_T`
+- `CC_GC_Channel_TOn`
+- `CC_GC_Channel_Cross`
+- `CC_GC_Channel_CrossOn`
+
+**Notes:**
+- These are primarily for shorter distances, and may have a range limit similar to a certain other games dust mechanics later on; but current boolean logic does not support this.
+ 
 ---
 
 ## 2. Signal Transfer Blocks (Targeted)

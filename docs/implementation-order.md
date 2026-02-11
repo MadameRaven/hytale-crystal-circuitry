@@ -52,7 +52,7 @@ Create asset IDs (MVP):
 - `CC_Lamp`
 - `CC_DoorAnchor`
 
-Confirm your pack namespace remains consistent with plugin identity (`raven`).
+Confirm your pack namespace remains consistent with plugin identity (`cc`).
 
 ---
 
